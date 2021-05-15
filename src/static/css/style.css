@@ -1,0 +1,174 @@
+body, header {
+    background-color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-image: url("../img/medusa.jpg") !important;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.tabs a {
+    font-family: 'Indie Flower', cursive;
+}
+
+.color-change {
+    color: black !important;
+    border-bottom: 2px solid white;
+}
+
+nav {
+    transition: background-color .2s ease-in-out;
+}
+
+.navbar {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-color .2s ease-in-out;
+}
+
+#home-title {
+    padding-left: 15%;
+    display: initial;
+}
+
+a.navbar-item:hover {
+    background-color: transparent !important;
+    border-bottom: 2px solid white;
+}
+
+#hire-button {
+    display: none;
+}
+
+#blur-footer {
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+.framed-lang {
+    height: 1000px !important;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    color: cornflowerblue;
+}
+
+.skill-cards {
+    margin-top: 3rem;
+    color: black;
+    overflow: inherit;
+}
+
+#devname {
+    display: none;
+}
+
+#text-hero {
+    padding-left: 20%;
+}
+
+#hero-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("../img/hero-img.jpg");
+
+    /* Set a specific height */
+    height: 50%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.title, .navbar-item, .subtitle, .tabs a {
+    color: white;
+}
+
+.tabs.is-boxed a:hover {
+    background-color: #ffffff;
+}
+
+.bg-tile {
+    background-image: url("../img/medusade.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.is-horizontal {
+    display: flex;
+    flex-basis: 50ex;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.card-image {
+    /*flex: 4;
+    flex-shrink: 1;*/
+    display: flex;
+    z-index: 1;
+}
+
+.image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.column.is-one-quarter {
+    flex: none;
+    width: 25%;
+    padding-top: 40px !important;
+}
+
+.card-content {
+    flex: 3;
+}
+
+form {
+    padding: 5%;
+}
+
+img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.icons-skills {
+    font-size: 5rem;
+}
+
+.delete {
+    background-color: red;
+}
+
+.framed-lang {
+    max-width: 100%;
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    max-height: 100%;
+    height: 100%;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: fill-available;
+}
