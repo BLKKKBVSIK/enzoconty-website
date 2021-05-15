@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <!-- <meta name="viewport" content="width=1024, initial-scale=0, maximum-scale=1, user-scalable=no"> -->
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-      {{title}}
+        {{title}}
     </title>
     {% if description %}
-      <meta name="description" content="{{description}}"/>
-    {% endif %}
-    {% block head %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
-    {% if prism == true %}
-      <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
-    {% endif %}
-  </head>
-  <body>
-    {% include "./partials/navbar.html" %}
+    <meta name="description" content="{{description}}" /> {% endif %}
+    <link rel="stylesheet" href="/static/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/css/bulma-timeline.css">
+    <link rel="stylesheet" href="/static/css/bulma-divider.min.css">
+    <link rel="stylesheet" href="/static/css/bulma-quickview.min.css">
+    <link rel="stylesheet" href="/static/css/style.css?version=1.0">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@creativebulma/bulma-tooltip@1.2.0/dist/bulma-tooltip.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="/static/js/bulma-quickview.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <script src="/static/js/main.js?version=1.0"></script>
 
-    {{ content | safe }}
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" /> {% if prism == true %}
+    <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css"> {% endif %}
+</head>
 
-    {% include "./partials/footer.html" %}
-
-    <script src="/static/js/alpine.js"></script>
+<body>
+    {% include "./partials/header.html" %} {{ content | safe }} {% include "./partials/footer.html" %}
 
     {% if path == "home" %}
-      <!-- Netlify Identity Widget -->
-      <!-- Needed only if you are using Netlify Identity feature -->
-      <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Netlify Identity Widget -->
+    <!-- Needed only if you are using Netlify Identity feature -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
 
-  </body>
+</body>
+
 </html>
