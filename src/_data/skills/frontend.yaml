@@ -1,0 +1,24 @@
+---
+items:
+  - text: html
+    url: "https://en.wikipedia.org/wiki/HTML"
+  - text: css
+    url: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
+  - text: sass
+    url: "https://sass-lang.com/"
+  - text: bootstrap
+    url: "https://getbootstrap.com/"
+  - text: materialize
+    url: "https://materializecss.com/"
+  - text: bulma
+    url: "https://bulma.io/"
+  - text: js
+    url: "https://en.wikipedia.org/wiki/JavaScript"
+  - text: jquery
+    url: "https://jquery.com/"
+  - text: react
+    url: "https://en.wikipedia.org/wiki/React_(JavaScript_library)"
+  - text: vue
+    url: "https://vuejs.org/"
+  - text: flutter
+    url: "https://flutter.dev/"
