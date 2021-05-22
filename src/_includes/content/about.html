@@ -50,31 +50,15 @@
                 <div class="content">
                     <h1 class="title">Skills</h1>
                     <hr>
-
-                    <p>Front-end
-                        <progress class="progress is-success" value="65" max="100">65%</progress>
-                    </p>
-                    <p>Back-end
-                        <progress class="progress is-primary" value="75" max="100">75%</progress>
-                    </p>
-                    <p>Databases
-                        <progress class="progress is-success" value="60" max="100">60%</progress>
-                    </p>
-                    <p>Mobile Apps
-                        <progress class="progress is-primary" value="80" max="100">80%</progress>
-                    </p>
-                    <p>Sys Admin
-                        <progress class="progress is-warning" value="50" max="100">50%</progress>
-                    </p>
-                    <p>Reverse engineering
-                        <progress class="progress is-danger" value="35" max="100">35%</progress>
-                    </p>
-                    <p>API
-                        <progress class="progress is-primary" value="65" max="100">65%</progress>
-                    </p>
-                    <p>Team Work
-                        <progress class="progress is-primary" value="60" max="100">60%</progress>
-                    </p>
+                    {% if softskills.items %}
+                        {% for item in softskills.items %}
+                            <p>{{item.title}}
+                                <progress class="progress 
+                                {% if item.percent > 65 %}is-primary{% elseif item.percent > 50 %}is-success{% elseif item.percent > 35 %}is-warning{% else %}is-danger{% endif %}"
+                                value="{{item.percent}}" max="100">{{item.percent}}%</progress>
+                            </p>
+                        {% endfor %}
+                    {% endif %}
                     <p>
                         ...and much more.<br><a onclick="openTab(event,'Skills')">Click here to get the complete
                             list</a>

@@ -1,0 +1,18 @@
+---
+items:
+  - title: Front-End
+    percent: 65
+  - title: Back-End
+    percent: 75
+  - title: Databases
+    percent: 60
+  - title: Mobile Apps
+    percent: 80
+  - title: Sys Admin
+    percent: 50
+  - title: Reverse Engineering
+    percent: 35
+  - title: API
+    percent: 65
+  - title: Team Work
+    percent: 60
