@@ -5,7 +5,7 @@ backend:
   ### enable below lines for github integration ###
   # name: github
   # repo: surjithctly/neat-starter
-media_folder: "src/static/img"
+media_folder: "src/static/img/icons"
 public_folder: "/static/img"
 
 # Please run "npx netlify-cms-proxy-server" for local backend
@@ -35,28 +35,75 @@ collections:
     editor:
       preview: false
     files:
-      - label: "Soft Skills"
-        name: "items"
-        file: "src/_data/soft-skills.yaml"
+      - label: "SoftSkills"
+        name: "softskills"
+        file: "src/_data/softskills.yaml"
         fields:
-          - label: Skills Items
+          - label: Soft Skills Items
             name: items
             widget: list
             allow_add: true
             collapsed: false
             fields:
-              - { label: Title, name: text, widget: string }
+              - { label: Title, name: title, widget: string }
               - { label: Percent, name: percent, widget: number }
-      - label: "Skills"
-        name: "items"
-        file: "src/_data/skills/frontend.yaml"
+      - label: "Front-End Skills"
+        name: "frontend"
+        file: "src/_data/frontend.yaml"
         fields:
-          - label: Front-End
+          - label: Front End
             name: items
             widget: list
             allow_add: true
             collapsed: false
             fields:
-              - { label: Title, name: text, widget: string }
+              - { label: Title, name: title, widget: string }
               - { label: URL, name: url, widget: string }
-              - { label: Image, name: img, widget: image }
+      - label: "Back-End Skills"
+        name: "backend"
+        file: "src/_data/backend.yaml"
+        fields:
+          - label: Back End
+            name: items
+            widget: list
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string }
+      - label: "Databases Skills"
+        name: "databases"
+        file: "src/_data/databases.yaml"
+        fields:
+          - label: Databases
+            name: items
+            widget: list
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string }
+      - label: "Compiled Languages"
+        name: "compiledlanguages"
+        file: "src/_data/compiledlanguages.yaml"
+        fields:
+          - label: Compiled Languages
+            name: items
+            widget: list
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string }
+      - label: "Other"
+        name: "other"
+        file: "src/_data/other.yaml"
+        fields:
+          - label: Other
+            name: items
+            widget: list
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string }

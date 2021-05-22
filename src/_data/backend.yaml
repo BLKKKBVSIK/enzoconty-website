@@ -1,0 +1,14 @@
+---
+items:
+  - title: php
+    url: "https://en.wikipedia.org/wiki/PHP"
+  - title: python
+    url: "https://en.wikipedia.org/wiki/Python_(programming_language)"
+  - title: nodejs
+    url: "https://en.wikipedia.org/wiki/Node.js"
+  - title: ruby
+    url: "https://en.wikipedia.org/wiki/Ruby_(programming_language)"
+  - title: django
+    url: "https://en.wikipedia.org/wiki/Django_(web_framework)"
+  - title: dart
+    url: "https://dart.dev/"

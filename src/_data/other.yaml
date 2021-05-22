@@ -1,0 +1,17 @@
+---
+items:
+  - title: debian
+    url: "https://en.wikipedia.org/wiki/Debian"
+  - title: macos
+    url: "https://en.wikipedia.org/wiki/MacOS"
+  - title: apache
+    url: "https://httpd.apache.org/"
+  - title: git
+    url: "https://en.wikipedia.org/wiki/Git"
+  - title: heroku
+    url: "https://en.wikipedia.org/wiki/Heroku"
+  - title: slack
+    url: "https://en.wikipedia.org/wiki/Slack_(software)"
+  - title: photoshop
+    url: "https://en.wikipedia.org/wiki/Adobe_Photoshop"
+

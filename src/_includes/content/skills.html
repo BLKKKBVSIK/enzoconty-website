@@ -1,212 +1,161 @@
 <div id="Skills" class="content-tab" style="display:none">
-    <!-- {% if frontend.items %} -->
+    {% if frontend.items %}
     <div class="card skill-cards">
         <div class="card-content">
             <h3>FRONT-END</h3>
             <div class="is-divider"></div>
             <div style="text-align: center">
                 <div class="columns is-gapless is-multiline is-mobile" >
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('html', quickviews)">
-                            <i class="devicon-html5-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('css', quickviews)">
-                            <i class="devicon-css3-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('sass', quickviews)">
-                            <i class="devicon-sass-original colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('bootstrap', quickviews)">
-                            <i class="devicon-bootstrap-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('materialize', quickviews)">
-                            <img alt="" width="80" src="./static/img/icons/materialize.png" class="responsive-img">
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('bulma', quickviews)">
-                            <img alt="" width="80" src="./static/img/icons/bulma.png" class="responsive-img">
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('js', quickviews)">
-                            <i class="devicon-javascript-plain colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('jquery', quickviews)">
-                            <i class="devicon-jquery-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('react', quickviews)">
-                            <i class="devicon-react-original-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('vue', quickviews)">
-                        <i class="devicon-vuejs-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter has-tooltip-bottom has-tooltip-arrow has-tooltip-info has-tooltip-hidden-mobile has-tooltip-active " data-tooltip="👆 Click 👆">
-                        <a onclick="quickviewlang('flutter', quickviews)">
-                            <img alt="" width="70" src="./static/img/icons/flutter.svg" class="responsive-img">
-                        </a>
-                    </div>
-
+                    {% for item in frontend.items %}
+                        <div class="column is-one-quarter {% if item.title == 'flutter' %} has-tooltip-bottom has-tooltip-arrow has-tooltip-info has-tooltip-hidden-mobile has-tooltip-active {% endif %}"
+                            {% if item.title == 'flutter' %} data-tooltip="👆 Click 👆" {% endif %}
+                        >
+                            <a onclick="quickviewlang('{{item.title}}', quickviews)">
+                                <img alt="" width="70" src="./static/img/icons/{{item.title}}.png" class="responsive-img">
+                            </a>
+                        </div>
+                        <div id="{{item.title}}" class="quickview">
+                            <header class="quickview-header">
+                                <a class="button is-info" href="{{item.url}}" target="_blank">Open this page in a new tab</a>
+                                <p>{{item.title | makeUppercase}}</p>
+                                <span class="delete" onclick="quickviewlang('{{item.title}}')"></span>
+                            </header>
+                            <div class="quickview-body">
+                                <div class="quickview-block">
+                                    <iframe id="{{item.title}}Iframe" name="{{item.title}}Iframe" data-src="{{item.url}}" src="about:blank" class="framed-lang"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-    <!-- {% endif %} -->
+    {% endif %}
+    {% if backend.items %}
     <div class="card skill-cards">
         <div class="card-content">
             <h3>BACK-END</h3>
             <div class="is-divider"></div>
             <div style="text-align: center">
                 <div class="columns is-gapless is-multiline is-mobile">
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('php', quickviews)">
-                            <i class="devicon-php-plain colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('python', quickviews)">
-                            <i class="devicon-python-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('nodejs', quickviews)">
-                            <i class="devicon-nodejs-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('ruby', quickviews)">
-                            <i class="devicon-ruby-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('django', quickviews)">
-                        <i class="devicon-django-plain colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('dart', quickviews)">
-                            <img alt="" width="70" src="./static/img/icons/dart.svg" class="responsive-img"><br>
-                        </a>
-                    </div>
+                    {% for item in backend.items %}
+                        <div class="column is-one-quarter">
+                            <a onclick="quickviewlang('{{item.title}}', quickviews)">
+                                <img alt="" width="70" src="./static/img/icons/{{item.title}}.png" class="responsive-img">
+                            </a>
+                        </div>
+                        <div id="{{item.title}}" class="quickview">
+                            <header class="quickview-header">
+                                <a class="button is-info" href="{{item.url}}" target="_blank">Open this page in a new tab</a>
+                                <p>{{item.title | makeUppercase}}</p>
+                                <span class="delete" onclick="quickviewlang('{{item.title}}')"></span>
+                            </header>
+                            <div class="quickview-body">
+                                <div class="quickview-block">
+                                    <iframe id="{{item.title}}Iframe" name="{{item.title}}Iframe" data-src="{{item.url}}" src="about:blank" class="framed-lang"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
+    {% if databases.items %}
     <div class="card skill-cards">
         <div class="card-content">
             <h3>DATABASES</h3>
             <div class="is-divider"></div>
             <div style="text-align: center">
                 <div class="columns is-gapless is-multiline is-mobile">
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('mysql', quickviews)">
-                            <img alt="" width="70" src="./static/img/icons/mysql.svg" class="responsive-img">
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('firebase', quickviews)">
-                            <img alt="" width="70" src="./static/img/icons/firebase.svg" class="responsive-img">
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('sqlite', quickviews)">
-                            <img alt="" width="70" src="./static/img/icons/sqlite.svg" class="responsive-img">
-                        </a>
-                    </div>
+                    {% for item in databases.items %}
+                        <div class="column is-one-quarter">
+                            <a onclick="quickviewlang('{{item.title}}', quickviews)">
+                                <img alt="" width="70" src="./static/img/icons/{{item.title}}.png" class="responsive-img">
+                            </a>
+                        </div>
+                        <div id="{{item.title}}" class="quickview">
+                            <header class="quickview-header">
+                                <a class="button is-info" href="{{item.url}}" target="_blank">Open this page in a new tab</a>
+                                <p>{{item.title | makeUppercase}}</p>
+                                <span class="delete" onclick="quickviewlang('{{item.title}}')"></span>
+                            </header>
+                            <div class="quickview-body">
+                                <div class="quickview-block">
+                                    <iframe id="{{item.title}}Iframe" name="{{item.title}}Iframe" data-src="{{item.url}}" src="about:blank" class="framed-lang"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
+    {% if compiledlanguages.items %}
     <div class="card skill-cards">
         <div class="card-content">
             <h3>COMPILED LANGUAGES</h3>
             <div class="is-divider"></div>
             <div style="text-align: center">
                 <div class="columns is-gapless is-multiline is-mobile">
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('c', quickviews)">
-                        <i class="devicon-c-line-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('cplusplus', quickviews)">
-                        <i class="devicon-cplusplus-line-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('swift', quickviews)">
-                        <i class="devicon-swift-plain colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('java', quickviews)">
-                        <i class="devicon-java-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
+                    {% for item in compiledlanguages.items %}
+                        <div class="column is-one-quarter">
+                            <a onclick="quickviewlang('{{item.title}}', quickviews)">
+                                <img alt="" width="70" src="./static/img/icons/{{item.title}}.png" class="responsive-img">
+                            </a>
+                        </div>
+                        <div id="{{item.title}}" class="quickview">
+                            <header class="quickview-header">
+                                <a class="button is-info" href="{{item.url}}" target="_blank">Open this page in a new tab</a>
+                                <p>{{item.title | makeUppercase}}</p>
+                                <span class="delete" onclick="quickviewlang('{{item.title}}')"></span>
+                            </header>
+                            <div class="quickview-body">
+                                <div class="quickview-block">
+                                    <iframe id="{{item.title}}Iframe" name="{{item.title}}Iframe" data-src="{{item.url}}" src="about:blank" class="framed-lang"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
+    {% if other.items %}
     <div class="card skill-cards">
         <div class="card-content">
             <h3>OTHER</h3>
             <div class="is-divider"></div>
             <div style="text-align: center">
                 <div class="columns is-gapless is-multiline is-mobile">
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('debian', quickviews)">
-                        <i class="devicon-debian-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('macos', quickviews)">
-                        <img width="80px" alt="MacOS logo" src="./static/img/icons/macos.png">
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('apache', quickviews)">
-                        <i class="devicon-apache-line-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('git', quickviews)">
-                        <i class="devicon-git-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('heroku', quickviews)">
-                        <i class="devicon-heroku-line-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('slack', quickviews)">
-                        <i class="devicon-slack-plain-wordmark colored icons-skills"></i>
-                        </a>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <a onclick="quickviewlang('photoshop', quickviews)">
-                        <img width="90px" src="./static/img/icons/photoshop.png">
-                        </a>
-                    </div>
+                    {% for item in other.items %}
+                        <div class="column is-one-quarter">
+                            <a onclick="quickviewlang('{{item.title}}', quickviews)">
+                                <img alt="" width="70" src="./static/img/icons/{{item.title}}.png" class="responsive-img">
+                            </a>
+                        </div>
+                        <div id="{{item.title}}" class="quickview">
+                            <header class="quickview-header">
+                                <a class="button is-info" href="{{item.url}}" target="_blank">Open this page in a new tab</a>
+                                <p>{{item.title | makeUppercase}}</p>
+                                <span class="delete" onclick="quickviewlang('{{item.title}}')"></span>
+                            </header>
+                            <div class="quickview-body">
+                                <div class="quickview-block">
+                                    <iframe id="{{item.title}}Iframe" name="{{item.title}}Iframe" data-src="{{item.url}}" src="about:blank" class="framed-lang"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
     <div class="card skill-cards">
         <div class="card-content">
             <h3>LANGUAGES</h3>
