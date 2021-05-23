@@ -29,7 +29,7 @@ collections:
         name: "tags"
         multiple: true
         create: true
-        options: ["Tags", "created", "from", "config.yml"]
+        options: ["flutter", "dart", "web", "desktop", "app", "devblog", "news"]
   - label: "Skills"
     name: "skills"
     editor:
