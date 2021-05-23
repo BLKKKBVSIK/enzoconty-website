@@ -10,11 +10,17 @@ module.exports = function (eleventyConfig) {
   // Merge data instead of overriding
   eleventyConfig.setDataDeepMerge(true);
 
+  // Make a string uppercase
   eleventyConfig.addFilter("makeUppercase", function(value) { 
     return String(value).toUpperCase();
   })
 
-  // human readable date
+  // Get the N elements of a collection
+  eleventyConfig.addFilter("limit", function(array, limit) {
+    return array.slice(0, limit);
+  });
+
+  // Display the date in a readable format
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "dd LLL yyyy"
