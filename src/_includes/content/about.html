@@ -91,4 +91,40 @@
             </div>
         </div>
     </article>
+    <div class="columns">
+        {% set postslist = collections.post | reverse | limit(3) %}
+        {% for post in postslist %}
+        <div class="column is-one-third" style="padding:0 !important; display: inline-flex;">
+            <div class="tile is-parent">
+                <article class="tile is-child notification
+                {% if loop.index0 == 0 %} is-link
+                {% elseif loop.index0 == 1 %} is-info
+                {% elseif loop.index0 == 2 %} is-primary
+                {% endif %}
+                ">
+                        {% if post.data.title | split(35) %}
+                            <h3>{{ post.data.title }}
+                        {% endif %}
+                        <hr>
+    
+                        {% if post.data.description %}
+                            <p class="text-lg text-gray-500 mb-3">
+                                {{ post.data.description }}
+                            </p>
+                        {% endif %}
+    
+                        <p>
+                            <a href="{{ post.url | url }}" class="text-indigo-500 font-bold text-lg">
+                                Read more →
+                            </a>
+                        </p>
+                </article>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="redirect-blog">
+        <a class="button is-info" href="/blog">Read more articles</a>
+    </div>
+
 </div>

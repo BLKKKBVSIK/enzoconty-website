@@ -172,3 +172,9 @@ img {
     height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     height: fill-available;
 }
+
+.redirect-blog {
+    position: absolute;
+    right: 1rem;
+    margin-top: -50px;
+}

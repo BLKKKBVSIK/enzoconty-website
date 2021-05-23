@@ -20,6 +20,10 @@ module.exports = function (eleventyConfig) {
     return array.slice(0, limit);
   });
 
+  eleventyConfig.addFilter("split", function(str, split) {
+    return str.substr(0, split);
+  });
+
   // Display the date in a readable format
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
