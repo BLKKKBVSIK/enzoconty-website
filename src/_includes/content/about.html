@@ -23,8 +23,8 @@
                     <article class="tile is-child notification is-success bg-tile">
                         <h1 class="title">Github</h1>
                         <hr>
-                        <figure class="image" style="text-align: center">
-                            <i style="font-size: 80px;" class="devicon-github-plain-wordmark"></i><br><br>
+                        <figure style="text-align: center">
+                            <img width="70px" height="70px" src="./static/img/github-logo.png"><br><br>
                             <a href="https://github.com/BLKKKBVSIK" class="button is-info">View it</a>
                         </figure>
                     </article>
@@ -96,25 +96,25 @@
         {% for post in postslist %}
         <div class="column is-one-third" style="padding:0 !important; display: inline-flex;">
             <div class="tile is-parent">
-                <article class="tile is-child notification
-                {% if loop.index0 == 0 %} is-link
-                {% elseif loop.index0 == 1 %} is-info
-                {% elseif loop.index0 == 2 %} is-primary
-                {% endif %}
-                ">
-                        {% if post.data.title | split(35) %}
-                            <h3>{{ post.data.title }}
+                <article class="tile is-child notification"
+                {% if loop.index0 == 0 %} style="background-color: #3273dc"
+                {% elseif loop.index0 == 1 %} style="background-color: #3298dc"
+                {% elseif loop.index0 == 2 %} style="background-color: #70bef3"
+                {% endif %};>
+                        {% if post.data.title %}
+                            <!-- | split(35) -->
+                            <h3 class="is-white">{{ post.data.title }}</h3>
                         {% endif %}
                         <hr>
     
                         {% if post.data.description %}
-                            <p class="text-lg text-gray-500 mb-3">
+                            <p class="is-white">
                                 {{ post.data.description }}
-                            </p>
+                            </p><br>
                         {% endif %}
     
                         <p>
-                            <a href="{{ post.url | url }}" class="text-indigo-500 font-bold text-lg">
+                            <a href="{{ post.url | url }}" class="read-more-btn">
                                 Read more →
                             </a>
                         </p>
