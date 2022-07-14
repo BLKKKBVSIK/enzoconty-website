@@ -37,7 +37,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " is-active";
     $('div#' + lastQuickview + '.is-active').removeClass('is-active');
     map.invalidateSize()
-    popup.setContent("<span>Right now in<br><b>Bordeaux</b></span>");
+    popup.setContent("<span>Right now in<br><b>Saint-Petersburg</b></span>");
     marker.bindPopup(popup);
     marker.openPopup();
 }
