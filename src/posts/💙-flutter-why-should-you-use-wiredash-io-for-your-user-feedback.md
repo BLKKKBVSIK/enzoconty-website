@@ -2,7 +2,7 @@
 title: 💙 Flutter - Why should you use WireDash.io for your user feedback ?
 description: Introduction to Wiredash, a dependency to increase your user
   feedback rate and quality
-author: Enzo CONTY
+author: Enzo Conty
 date: 2020-05-20T15:43:56.183Z
 tags:
   - flutter

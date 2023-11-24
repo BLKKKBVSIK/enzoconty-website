@@ -3,7 +3,7 @@ title: "💙 #Flutter: Why should you use it? Pros of the cross-platform mobile
   framework of Google!"
 description: A small blog post to learn more about the specifics of the new
   cross-platform mobile framework and why you should adopt it!
-author: Enzo CONTY
+author: Enzo Conty
 date: 2020-05-21T15:32:06.029Z
 tags:
   - flutter
