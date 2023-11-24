@@ -3,7 +3,7 @@ title: "💙 Flutter: NavigationRail, the new widget of Flutter v1.17 !"
 description: "Let's talk about one of the new widgets of Flutter v1.17: the
   NavigationRail widget. It allow us to easily create a sidebar for navigations
   or quick actions. "
-author: Enzo CONTY
+author: Enzo Conty
 date: 2020-05-11T20:49:42.311Z
 tags:
   - flutter

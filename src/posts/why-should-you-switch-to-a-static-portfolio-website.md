@@ -2,7 +2,7 @@
 title: Why should you switch to a static portfolio website?
 description: This is a blog post about my journey switching from a complex
   technical stack website to a much more maintainable one with almost no effort.
-author: Enzo CONTY
+author: Enzo Conty
 date: 2021-05-29T14:15:09.100Z
 tags:
   - web

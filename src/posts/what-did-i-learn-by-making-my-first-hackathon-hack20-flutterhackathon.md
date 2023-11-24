@@ -3,7 +3,7 @@ title: "What did I learn by making my first Hackathon? #Hack20 #FlutterHackathon
 description: "My first experience doing a Hackathon. There are my conclusions
   about this first Hackathon of mine and the overall experience. (It was a great
   experience! 👍) "
-author: Enzo CONTY
+author: Enzo Conty
 date: 2020-07-03T13:17:48.905Z
 tags:
   - flutter
