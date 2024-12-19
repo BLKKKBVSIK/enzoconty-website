@@ -5,15 +5,14 @@
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/">
                         <img src="/static/img/favicon.png" alt="Logo">
-                        <span id="devname">&nbsp;&nbsp;&nbsp;Enzo Conty - Freelance Sr. Mobile SWE</span>
+                        <span id="devname">&nbsp;&nbsp;&nbsp;Enzo Conty - Senior Mobile SWE & CTO</span>
                     </a>
                     </span>
                 </div>
                 <div id="navbarMenuHeroB" class="navbar-menu">
                     <div class="navbar-end">
                         <div data-aos="fade-left" id="hire-button" class="navbar-item cta aos-animate">
-                            <a href="mailto:contact@enzoconty.dev" rel="noopener noreferrer"
-                               class="button is-primary is-undefined is-undefined">
+                            <a href="mailto:contact@enzoconty.dev" rel="noopener noreferrer" class="button is-primary is-undefined is-undefined">
                                 <span>Hire me <span role="img" aria-label="emoji">✉️</span></span>
                             </a>
                         </div>
@@ -29,7 +28,7 @@
                 Enzo Conty
             </p>
             <p class="subtitle">
-                Freelance Sr. Mobile SWE
+                Senior Mobile SWE & CTO
             </p>
         </div>
     </div>
@@ -37,15 +36,13 @@
         <nav class="tabs is-boxed is-fullwidth">
             <div class="container">
                 <ul>
-                    {% if '/blog' not in page.url %}
-                        {% if '/posts' not in page.url  %}
-                            <li class="tab is-active" onclick="openTab(event,'About')"><a>About</a></li>
-                            <li class="tab" onclick="openTab(event,'Hobbies')"><a>Hobbies</a></li>
-                            <li class="tab" onclick="openTab(event,'Exp')"><a>Experience</a></li>
-                            <li class="tab" onclick="openTab(event,'Skills')"><a>Skills</a></li>
-                            <li class="tab" onclick="openTab(event,'Contact')"><a>Contact</a></li>
-                        {% endif %}
-                    {% endif %}
+                    {% if '/blog' not in page.url %} {% if '/posts' not in page.url %}
+                    <li class="tab is-active" onclick="openTab(event,'About')"><a>About</a></li>
+                    <li class="tab" onclick="openTab(event,'Hobbies')"><a>Hobbies</a></li>
+                    <li class="tab" onclick="openTab(event,'Exp')"><a>Experience</a></li>
+                    <li class="tab" onclick="openTab(event,'Skills')"><a>Skills</a></li>
+                    <li class="tab" onclick="openTab(event,'Contact')"><a>Contact</a></li>
+                    {% endif %} {% endif %}
                 </ul>
             </div>
         </nav>

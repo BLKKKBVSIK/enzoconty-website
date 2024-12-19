@@ -6,11 +6,8 @@
                 <article class="tile is-child notification is-info">
                     <p class="title">Hello, let me introduce myself:</p>
                     <hr>
-                    <p class="subtitle">I'm Enzo, a <a href="https://www.malt.fr/profile/enzoconty" target="_blank" title="Hire me there !">freelance</a> Sr. Mobile SWE.<br><br>
-                
-                        I'm actively involved in the Flutter community and also a public speaker and meetup organizer at various events.<br><br>
-                        My extensive project experience has deeply enhanced my expertise and efficiency in Flutter development.<br><br>
-                        I founded <a href="https://apploops.dev/" target="_blank" title="AppLoops">AppLoops</a>, a mobile development agency, in 2022.<br><br>
+                    <p class="subtitle">I'm Enzo, a Senior Mobile SWE & CTO at <a href="https://ezymob.fr/">Ezymob</a>.<br><br> I'm actively involved in the Flutter community and also a public speaker and meetup organizer at various events.<br><br> My extensive project experience
+                        has deeply enhanced my expertise and efficiency in Flutter development.<br><br> I founded <a href="https://apploops.dev/" target="_blank" title="AppLoops">AppLoops</a>, a mobile development agency, in 2022 when I was still a freelance.<br><br>
                     </p>
                 </article>
             </div>
@@ -29,12 +26,12 @@
 
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-primary">
-                            <h1 class="title">My resume:</h1>
-                            <hr>
-                            <figure style="text-align: center">
-                                <i class="fa fa-file fa-5x"></i><br><br>
-                                <a href="static/documents/ENCV.pdf" class="button is-info">View it</a>
-                            </figure>
+                        <h1 class="title">My resume:</h1>
+                        <hr>
+                        <figure style="text-align: center">
+                            <i class="fa fa-file fa-5x"></i><br><br>
+                            <a href="static/documents/ENCV.pdf" class="button is-info">View it</a>
+                        </figure>
                     </article>
                 </div>
 
@@ -45,16 +42,12 @@
             <article class="tile is-child notification is-link">
                 <div class="content">
                     <h1 class="title">Skills</h1>
-                    <hr>
-                    {% if softskills.items %}
-                        {% for item in softskills.items %}
-                            <p>{{item.title}}
-                                <progress class="progress 
-                                {% if item.percent > 65 %}is-primary{% elseif item.percent > 50 %}is-success{% elseif item.percent > 35 %}is-warning{% else %}is-danger{% endif %}"
-                                value="{{item.percent}}" max="100">{{item.percent}}%</progress>
-                            </p>
-                        {% endfor %}
-                    {% endif %}
+                    <hr> {% if softskills.items %} {% for item in softskills.items %}
+                    <p>{{item.title}}
+                        <progress class="progress 
+                                {% if item.percent > 65 %}is-primary{% elseif item.percent > 50 %}is-success{% elseif item.percent > 35 %}is-warning{% else %}is-danger{% endif %}" value="{{item.percent}}" max="100">{{item.percent}}%</progress>
+                    </p>
+                    {% endfor %} {% endif %}
                     <p>
                         ...and much more.<br><a onclick="openTab(event,'Skills')">Click here to get the complete
                             list</a>
@@ -71,8 +64,7 @@
             <div class="content">
                 <ul>
                     <li>
-                        What I love the most, of course, is being <strong>wrong</strong>, learning why, and
-                        improving from that.
+                        What I love the most, of course, is being <strong>wrong</strong>, learning why, and improving from that.
                     </li>
                     <li>
                         Work on complex problems and <strong>solve new challenges</strong>.
@@ -87,32 +79,24 @@
         </div>
     </article>
     <div class="columns">
-        {% set postslist = collections.post | reverse | limit(3) %}
-        {% for post in postslist %}
+        {% set postslist = collections.post | reverse | limit(3) %} {% for post in postslist %}
         <div class="column is-one-third" style="padding:0 !important; display: inline-flex;">
             <div class="tile is-parent">
-                <article class="tile is-child notification"
-                {% if loop.index0 == 0 %} style="background-color: #3273dc"
-                {% elseif loop.index0 == 1 %} style="background-color: #3298dc"
-                {% elseif loop.index0 == 2 %} style="background-color: #70bef3"
-                {% endif %};>
-                        {% if post.data.title %}
-                            <!-- | split(35) -->
-                            <h3 class="is-white">{{ post.data.title }}</h3>
-                        {% endif %}
-                        <hr>
-    
-                        {% if post.data.description %}
-                            <p class="is-white">
-                                {{ post.data.description }}
-                            </p><br>
-                        {% endif %}
-    
-                        <p>
-                            <a href="{{ post.url | url }}" class="read-more-btn">
+                <article class="tile is-child notification" {% if loop.index0==0 %} style="background-color: #3273dc" {% elseif loop.index0==1 %} style="background-color: #3298dc" {% elseif loop.index0==2 %} style="background-color: #70bef3" {% endif %};>
+                    {% if post.data.title %}
+                    <!-- | split(35) -->
+                    <h3 class="is-white">{{ post.data.title }}</h3>
+                    {% endif %}
+                    <hr> {% if post.data.description %}
+                    <p class="is-white">
+                        {{ post.data.description }}
+                    </p><br> {% endif %}
+
+                    <p>
+                        <a href="{{ post.url | url }}" class="read-more-btn">
                                 Read more →
                             </a>
-                        </p>
+                    </p>
                 </article>
             </div>
         </div>

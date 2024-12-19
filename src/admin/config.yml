@@ -29,7 +29,7 @@ collections:
         name: "tags"
         multiple: true
         create: true
-        options: ["flutter", "dart", "web", "desktop", "app", "devblog", "news"]
+        options: ["flutter", "dart", "web", "desktop", "app", "devblog", "news", "accessibility", "freelancing", "career"]
   - label: "Skills"
     name: "skills"
     editor:
